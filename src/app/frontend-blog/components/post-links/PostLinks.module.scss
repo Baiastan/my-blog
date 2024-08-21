@@ -1,0 +1,26 @@
+.postLinks {
+  display: flex;
+  flex-direction: column;
+  min-width: 620px;
+  background-color: var(--link-bg-color);
+  margin-left: auto;
+  margin-right: auto;
+
+  a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 16px;
+    justify-content: space-between;
+  }
+
+  li {
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.3s ease-in-out;
+    padding: 16px;
+
+    &:hover {
+      background-color: var(--link-bg-color-hover);
+    }
+  }
+}

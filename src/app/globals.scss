@@ -1,0 +1,144 @@
+@import "../app/styles/variables.scss";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--text-color);
+  background-color: var(--background-color);
+  position: relative;
+}
+
+footer {
+  margin-top: 3rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+button {
+  color: var(--button-text-color); /* White text */
+  padding: 10px 20px; /* Padding for a comfortable click area */
+  font-size: 16px; /* Font size */
+  border: none; /* No border */
+  background-color: var(--button-bg-color);
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  width: 100%;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.link-to-resources {
+  font-size: 1.5rem;
+  text-decoration: underline;
+  width: fit-content;
+  &:hover {
+    color: #9cdcfe;
+  }
+}
+
+p {
+  font-family: "Noto Sans", sans-serif; /* A classic, readable font */
+  font-size: 1.3rem; /* Slightly larger than the default for better readability */
+  line-height: 1.6; /* Adequate spacing between lines for readability */
+  color: var(--text-color); /* Dark gray text for less strain on the eyes compared to pure black */
+  margin-bottom: 1rem; /* Space between paragraphs to avoid clutter */
+  max-width: 700px; /* Limiting paragraph width for better readability on large screens */
+  text-align: left; /* Standard alignment for easy reading */
+
+  /* Accessibility Features */
+  padding: 10px; /* Extra space around the text for easier focus */
+  border-radius: 5px; /* Slightly rounded corners for a modern look */
+}
+
+p a {
+  color: #007acc; /* Accessible color contrast for links */
+  text-decoration: underline; /* Ensures links are distinguishable */
+}
+
+p a:hover,
+p a:focus {
+  color: #005fa3; /* Slightly darker on hover for visual feedback */
+  text-decoration: none; /* Optional: removes underline on hover for a cleaner look */
+}
+
+@media (max-width: 768px) {
+  p {
+    font-size: 1rem; /* Adjust font size for smaller screens */
+    padding: 8px; /* Slightly reduce padding on smaller devices */
+  }
+}
+
+.button-toggle-theme {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 50px;
+  height: 25px;
+  background-color: var(--background-color); // Dark mode background
+  border-radius: 25px;
+  border: 1px solid var(--border-color); // Dark mode border
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  padding: 3px;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+
+  // Toggle knob
+  &::before {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background-color: var(--text-color); // Dark mode knob color
+    border-radius: 50%;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    transform: translateX(0);
+  }
+
+  // When in light mode
+  &[data-theme="light"] {
+    background-color: var(--link-bg-color); // Light mode background
+    border-color: var(--border-color); // Light mode border
+
+    &::before {
+      background-color: var(--background-color); // Light mode knob color
+      transform: translateX(25px); // Move the knob to the right
+    }
+  }
+}
+
+.generic-class {
+  color: var(--text-color);
+  font-size: 1rem;
+}
+
+.border-wrapper {
+  display: flex; // flex
+  flex-direction: column; // flex-col
+  color: var(--text-color); // text-white
+  width: 100%; // w-full
+  margin-left: auto; // mx-auto (center horizontally)
+  margin-right: auto;
+  margin-top: 0.25rem; // mt-1 (1 * 0.25rem = 0.25rem)
+  border: 4px solid var(--border-color); // border-4 border-white
+  padding: 1.25rem; // p-5 (5 * 0.25rem = 1.25rem)
+  border-radius: 0.5rem; // rounded-lg (lg = 0.5rem)
+  max-width: 1500px;
+  margin-top: 36px;
+
+  @media (min-width: 620px) {
+    width: 80%; // ss:w-4/5 (4/5 = 80%)
+  }
+}

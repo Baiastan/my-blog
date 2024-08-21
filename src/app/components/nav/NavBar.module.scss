@@ -1,0 +1,35 @@
+.navBarContainer {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.25rem;
+  align-items: center;
+  gap: 1.25rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  // Responsive design for small screens (ss: prefix)
+  @media (min-width: 620px) {
+    width: 80%;
+  }
+}
+
+.navItem {
+  display: flex;
+  transition: all 0.1s ease-in;
+  padding-top: 0.75rem;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+
+  @media (min-width: 1060px) {
+    // md: prefix for medium screens
+    padding: 0;
+  }
+}
+
+.active {
+  color: var(--active-nav-link-color);
+  text-decoration: underline;
+}

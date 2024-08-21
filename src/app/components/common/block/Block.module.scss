@@ -1,0 +1,14 @@
+.block {
+  width: 100%; // w-full
+  margin-top: 1.25rem; // mt-5 (5 * 0.25rem = 1.25rem)
+  display: flex; // flex
+  flex-wrap: wrap; // flex-wrap
+  align-items: center; // items-center
+  margin-left: auto; // mx-auto (center horizontally)
+  margin-right: auto;
+
+  @media (min-width: 620px) {
+    // ss:w-4/5
+    width: 80%; // ss:w-4/5 (4/5 = 80%)
+  }
+}
