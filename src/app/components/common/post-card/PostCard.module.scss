@@ -11,6 +11,7 @@
   border-radius: 0.5rem; // rounded-lg (lg = 0.5rem)
   max-width: 1500px;
   margin-top: 36px;
+  position: relative;
 
   @media (min-width: 620px) {
     width: 80%; // ss:w-4/5 (4/5 = 80%)

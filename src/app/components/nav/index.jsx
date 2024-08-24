@@ -17,8 +17,9 @@ const navLinks = [
     text: "Frontend blog",
   },
   {
-    to: "/biography",
-    text: "Biography",
+    to: "https://www.linkedin.com/in/baiastan-zhuzupbekov",
+    text: "Linkedin",
+    external: true,
   },
 ];
 
@@ -30,6 +31,7 @@ const Navbar = () => {
           <NavigationItem
             key={`${index}-${navLink.text}`}
             text={navLink.text}
+            external={navLink.external}
             to={navLink.to}
             className={styles.navItem}
             active={styles.active}

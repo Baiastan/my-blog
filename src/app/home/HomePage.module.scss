@@ -1,0 +1,33 @@
+.profilePhoto {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 16px;
+
+  img {
+    border-radius: 50%; /* Makes the image circular */
+    max-width: 400px; /* Set a width for the image */
+    max-height: 400px; /* Set a height for the image (same as width for a perfect circle) */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow for depth */
+    border: 5px solid var(--border-color);
+    filter: brightness(1.2); /* Increases brightness slightly */
+    transition: filter 0.3s;
+  }
+
+  @media (max-width: 620px) {
+    width: 100%; // ss:w-4/5 (4/5 = 80%)
+    padding: 0;
+
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
+
+.allBlogsAnchor {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}

@@ -6,13 +6,12 @@ import Header from "@/app/components/common/header/Header";
 import { fetchPostDetails } from "../../fetch-api/fetch-post-utils";
 import HTMLParser from "@/app/components/common/html-parser/HTMLParser";
 import LazyLoadOnInteraction from "./LazyLoadOnInteraction";
-import Link from "next/link";
 import LazyIntersectionObserver from "./LazyLoadOnIntersection";
+import AllBlogsAnchor from "../../components/all-blogs-anchor/AllBlogsAnchor";
 
 const LazyLoad = async () => {
   const post = await fetchPostDetails("lazy-load");
 
-  console.log("post details: ", post);
   return (
     <>
       <Header size="xl" color="red" border>
@@ -192,11 +191,7 @@ function App() {
           React docs: Lazy Load
         </a>
       </PostCard>
-      <footer className="border-wrapper">
-        <Link href="/frontend-blog" className="link-to-resources">
-          All blogs
-        </Link>
-      </footer>
+      <AllBlogsAnchor />
     </>
   );
 };

@@ -3,7 +3,7 @@ import Navbar from "./components/nav";
 import "./globals.scss";
 
 export const metadata = {
-  title: "Blog - Baiastan Zhuz",
+  title: "Blog - Baiastan Zhuzupbekov",
   description: "Blog by Baiastan Zhuzupbekov - Frontend Engineer",
 };
 

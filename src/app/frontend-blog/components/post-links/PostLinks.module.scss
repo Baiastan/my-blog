@@ -1,10 +1,14 @@
 .postLinks {
   display: flex;
   flex-direction: column;
-  min-width: 620px;
   background-color: var(--link-bg-color);
   margin-left: auto;
   margin-right: auto;
+  width: 100%;
+
+  @media (min-width: 720px) {
+    width: 50%; // ss:w-4/5 (4/5 = 80%)
+  }
 
   a {
     display: flex;
