@@ -18,7 +18,7 @@ const Header = ({ children, color = "", level = 1, size = "l", border = false })
 
   return (
     <HeadingTag
-      style={{ color: colors[color], fontSize: sizes[size], padding: "10px" }}
+      style={{ color: colors[color], fontSize: sizes[size] }}
       className={`generic-class ${border && "border-wrapper"}`}
     >
       {children}
