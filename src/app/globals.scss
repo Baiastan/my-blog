@@ -6,7 +6,8 @@
 
 body {
   color: var(--text-color);
-  background-color: var(--background-color);
+  background: var(--background-color);
+  transition: background 0.2s linear;
   position: relative;
 }
 
@@ -38,6 +39,7 @@ li {
 a {
   text-decoration: none;
   color: var(--text-color);
+  transition: color 0.2s linear;
 }
 
 .link-to-resources {
@@ -57,7 +59,7 @@ p {
   margin-bottom: 1rem; /* Space between paragraphs to avoid clutter */
   max-width: 700px; /* Limiting paragraph width for better readability on large screens */
   text-align: left; /* Standard alignment for easy reading */
-
+  transition: color 0.2s linear;
   /* Accessibility Features */
   border-radius: 5px; /* Slightly rounded corners for a modern look */
 }
@@ -80,44 +82,6 @@ p a:focus {
   }
 }
 
-.button-toggle-theme {
-  position: fixed;
-  right: 20px;
-  top: 20px;
-  width: 50px;
-  height: 25px;
-  background-color: var(--background-color); // Dark mode background
-  border-radius: 25px;
-  border: 1px solid var(--border-color); // Dark mode border
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  padding: 3px;
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-
-  // Toggle knob
-  &::before {
-    content: "";
-    width: 20px;
-    height: 20px;
-    background-color: var(--text-color); // Dark mode knob color
-    border-radius: 50%;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    transform: translateX(0);
-  }
-
-  // When in light mode
-  &[data-theme="light"] {
-    background-color: var(--link-bg-color); // Light mode background
-    border-color: var(--border-color); // Light mode border
-
-    &::before {
-      background-color: var(--background-color); // Light mode knob color
-      transform: translateX(25px); // Move the knob to the right
-    }
-  }
-}
-
 .generic-class {
   color: var(--text-color);
   font-size: 1rem;
@@ -136,7 +100,7 @@ p a:focus {
   border-radius: 0.5rem; // rounded-lg (lg = 0.5rem)
   max-width: 1500px;
   margin-top: 36px;
-
+  transition: color 0.2s linear;
   @media (min-width: 620px) {
     width: 80%; // ss:w-4/5 (4/5 = 80%)
   }

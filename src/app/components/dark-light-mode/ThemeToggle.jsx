@@ -1,6 +1,10 @@
 "use client";
 import React, { useEffect } from "react";
 
+import { HiMoon, HiSun } from "react-icons/hi";
+
+import styles from "./ThemeToggle.module.scss";
+
 const ThemeToggle = () => {
   useEffect(() => {
     const theme = localStorage.getItem("theme") || "dark";
@@ -14,7 +18,16 @@ const ThemeToggle = () => {
     localStorage.setItem("theme", newTheme);
   };
 
-  return <button className="button-toggle-theme" onClick={toggleTheme}></button>;
+  return (
+    <div className={styles.toggleContainer}>
+      <input onChange={toggleTheme} type="checkbox" className={styles.checkbox} id="checkbox" />
+      <label for="checkbox" className={styles.checkboxLabel}>
+        <HiMoon className={styles.hiMoon} />
+        <HiSun className={styles.hiSun} />
+        <span className={styles.ball}></span>
+      </label>
+    </div>
+  );
 };
 
 export default ThemeToggle;
