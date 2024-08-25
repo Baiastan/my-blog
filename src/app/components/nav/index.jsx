@@ -5,6 +5,7 @@ import React from "react";
 import NavigationItem from "./NavigationItem";
 
 import styles from "./NavBar.module.scss";
+import ThemeToggle from "../dark-light-mode/ThemeToggle";
 
 const navLinks = [
   {
@@ -25,7 +26,7 @@ const navLinks = [
 
 const Navbar = () => {
   return (
-    <nav>
+    <nav className={styles.nav}>
       <ul className={styles.navBarContainer}>
         {navLinks.map((navLink, index) => (
           <NavigationItem
@@ -38,6 +39,7 @@ const Navbar = () => {
             inactive={styles.inactive}
           />
         ))}
+        <ThemeToggle />
       </ul>
     </nav>
   );
