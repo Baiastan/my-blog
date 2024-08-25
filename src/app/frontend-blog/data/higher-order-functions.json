@@ -1,6 +1,5 @@
 {
-  "id": "lazy-load",
-  "post-title": "Lazy Loading in React",
-  "title": "Dynamic Lazy Loading",
+  "id": "higher-order-functions",
+  "title": "Higher Order Functions in React",
   "text": "<p>Lazy loading in React.js is an effective way to enhance your app's performance by loading components only when they are needed. Rather than requiring users to wait while the entire application loads upfront—regardless of what they actually need—lazy loading allows you to divide your code into smaller, more manageable chunks. These chunks are then loaded on demand as users navigate through your app.</p>\n\n<p>This approach significantly reduces the initial load time, ensuring that your app starts up faster and only the necessary data is downloaded. Users interact with your app more smoothly, as they're not burdened with loading content they aren’t immediately accessing.</p>\n\n<p>By implementing lazy loading, you not only improve your app's speed but also optimize resource usage, delivering a more responsive and efficient user experience. It’s a smart strategy that aligns with modern best practices in web development.</p><p>There are several types of lazy loading we will discuss in this blog.</p>"
 }

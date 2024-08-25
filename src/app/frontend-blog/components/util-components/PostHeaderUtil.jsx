@@ -1,8 +1,8 @@
 import React from "react";
 import Header from "@/app/components/common/header/Header";
 
-const PostHeader = () => {
+const PostHeaderUtil = () => {
   return <Header>Post Header</Header>;
 };
 
-export default PostHeader;
+export default PostHeaderUtil;

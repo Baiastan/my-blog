@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 
 export const fetchPostLinks = async () => {
-  const filePath = path.join(process.cwd(), "src/app/frontend-blog/data", "data.json");
+  const filePath = path.join(process.cwd(), "src/app/frontend-blog/data", "post-links.json");
   const jsonData = fs.readFileSync(filePath, "utf8");
   const posts = JSON.parse(jsonData);
 

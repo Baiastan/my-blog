@@ -18,7 +18,7 @@ const HomePage = () => {
         <AllBlogsAnchor className={styles.allBlogsAnchor} inline />
         <Header size="xl">Hey, Welcome! My name is Baiastan Zhuzupbekov and I am a frontend developer!</Header>
         <div className={styles.profilePhoto}>
-          <Image src={photo} alt="Profile Photo" />
+          <Image src={photo} alt="Profile Photo" width={400} height={400} />
         </div>
         <p>
           Hello and welcome! My name is Baiastan, and this blog is a space where I dive deep into the world of front-end

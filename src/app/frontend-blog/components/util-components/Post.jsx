@@ -1,5 +1,5 @@
 import React from "react";
-import PostHeader from "./PostHeader";
+import PostHeader from "./PostHeaderUtil";
 import PostBody from "./PostBody";
 import PostFooter from "./PostFooter";
 
