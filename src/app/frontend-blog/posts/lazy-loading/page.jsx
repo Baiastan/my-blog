@@ -9,12 +9,13 @@ import LazyLoadOnInteraction from "./LazyLoadOnInteraction";
 import LazyIntersectionObserver from "./LazyLoadOnIntersection";
 import AllBlogsAnchor from "../../components/all-blogs-anchor/AllBlogsAnchor";
 import PostHeader from "@/app/components/common/header/PostHeader";
+import PostLayout from "../PostLayout";
 
 const LazyLoad = async () => {
   const post = await fetchPostDetails("lazy-load");
 
   return (
-    <>
+    <PostLayout>
       <PostHeader>{post["post-title"]}</PostHeader>
       <PostCard el="article">
         <HTMLParser>{post.text}</HTMLParser>
@@ -190,8 +191,7 @@ function App() {
           React docs: Lazy Load
         </a>
       </PostCard>
-      <AllBlogsAnchor />
-    </>
+    </PostLayout>
   );
 };
 
