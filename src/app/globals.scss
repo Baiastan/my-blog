@@ -3,6 +3,9 @@
 * {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   color: var(--text-color);
@@ -53,7 +56,7 @@ a {
 
 p {
   font-family: "Noto Sans", sans-serif; /* A classic, readable font */
-  font-size: 1.3rem; /* Slightly larger than the default for better readability */
+  font-size: var(--p-text-size); /* Slightly larger than the default for better readability */
   line-height: 1.6; /* Adequate spacing between lines for readability */
   color: var(--text-color); /* Dark gray text for less strain on the eyes compared to pure black */
   margin-bottom: 1rem; /* Space between paragraphs to avoid clutter */
@@ -95,7 +98,7 @@ p a:focus {
   margin-left: auto; // mx-auto (center horizontally)
   margin-right: auto;
   margin-top: 0.25rem; // mt-1 (1 * 0.25rem = 0.25rem)
-  border: 4px solid var(--border-color); // border-4 border-white
+  border: var(--border-size) solid var(--border-color); // border-4 border-white
   padding: 1.25rem; // p-5 (5 * 0.25rem = 1.25rem)
   border-radius: 0.5rem; // rounded-lg (lg = 0.5rem)
   max-width: 1500px;

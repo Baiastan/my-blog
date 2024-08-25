@@ -2,9 +2,9 @@ import React from "react";
 
 import styles from "./PostCard.module.scss";
 
-const PostCard = ({ children, el: Element = "section", align = "left", className }) => {
+const PostCard = ({ children, el: Element = "section", align = "left", className, id }) => {
   return (
-    <Element style={{ alignItems: align }} className={`${styles.postCard} ${className}`}>
+    <Element id={id} style={{ alignItems: align }} className={`${styles.postCard} ${className}`}>
       {children}
     </Element>
   );

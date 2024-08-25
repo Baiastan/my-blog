@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header = ({ children, color = "", level = 1, size = "l", border = false }) => {
+const Header = ({ children, color = "", level = 2, size = "l", border = false, id }) => {
   const HeadingTag = `h${level}`; // Dynamically set the heading tag based on the level prop
 
   const colors = {
@@ -18,6 +18,7 @@ const Header = ({ children, color = "", level = 1, size = "l", border = false })
 
   return (
     <HeadingTag
+      id={id}
       style={{ color: colors[color], fontSize: sizes[size] }}
       className={`generic-class ${border && "border-wrapper"}`}
     >

@@ -9,6 +9,16 @@ const nextConfig = {
 
     return config;
   },
+
+  async redirects() {
+    return [
+      {
+        source: "/frontend-blog",
+        destination: "/frontend-blog/posts",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

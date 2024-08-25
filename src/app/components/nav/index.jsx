@@ -14,7 +14,7 @@ const navLinks = [
     exact: true,
   },
   {
-    to: "/frontend-blog",
+    to: "/frontend-blog/posts",
     text: "Frontend blog",
   },
   {

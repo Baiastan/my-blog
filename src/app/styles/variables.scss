@@ -8,6 +8,13 @@
   --active-nav-link-color: #fbbf24;
   --button-bg-color: #0165d2;
   --button-text-color: #fff;
+
+  --black-white-color: #fff;
+  --hover-toggle-color: #b6bfd0;
+
+  --border-size: 2px;
+  //sizes
+  --p-text-size: 1.3rem;
 }
 
 /* (light mode) */
@@ -21,4 +28,6 @@
   --link-bg-color: #dfe6f4;
   --link-bg-color-hover: #d1dbef;
   --active-nav-link-color: #0748dfb7;
+  --black-white-color: #000;
+  --hover-toggle-color: #444850;
 }

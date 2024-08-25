@@ -1,0 +1,24 @@
+.anchorLinkContainer {
+  display: flex;
+  align-items: center;
+  margin: 8px 0; /* Add some spacing between links */
+  text-decoration: underline;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  background-color: var(--black-white-color); /* Blue color for the dot */
+  border-radius: 50%;
+  margin-right: 8px; /* Space between dot and text */
+}
+
+.anchorLink {
+  text-decoration: none;
+  font-size: var(--p-text-size);
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--hover-toggle-color); /* Darker blue on hover */
+  }
+}
