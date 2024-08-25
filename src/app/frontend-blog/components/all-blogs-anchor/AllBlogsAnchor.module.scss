@@ -1,0 +1,10 @@
+.allBlogsAnchorContainer {
+  display: flex;
+  justify-content: space-between;
+  justify-content: baseline;
+  flex-direction: row;
+
+  a {
+    font-size: var(--p-text-size);
+  }
+}

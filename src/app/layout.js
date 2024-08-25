@@ -1,4 +1,3 @@
-import ThemeToggle from "./components/dark-light-mode/ThemeToggle";
 import Navbar from "./components/nav";
 import "./globals.scss";
 
