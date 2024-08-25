@@ -11,7 +11,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <ThemeToggle />
         <Navbar />
         {children}
       </body>
