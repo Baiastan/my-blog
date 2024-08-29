@@ -17,13 +17,20 @@ const navLinks = [
     to: "/frontend-blog/posts",
     text: "Frontend blog",
   },
+
+  {
+    to: "https://ai-poker.vercel.app",
+    text: "AI-Poker",
+    external: true,
+  },
+
   {
     to: "https://www.linkedin.com/in/baiastan-zhuzupbekov",
     text: "Linkedin",
     external: true,
   },
 ];
-
+//https://ai-poker.vercel.app/
 const Navbar = () => {
   return (
     <nav className={styles.nav}>

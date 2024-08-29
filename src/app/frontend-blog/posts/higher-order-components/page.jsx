@@ -6,7 +6,6 @@ import PostCard from "@/app/components/common/post-card/PostCard";
 import Header from "@/app/components/common/header/Header";
 import CodeSnippet from "@/app/components/common/code-snippet/CodeSnippet";
 import AnchorLink from "@/app/components/common/anchor-link/AnchorLink";
-import AllBlogsAnchor from "../../components/all-blogs-anchor/AllBlogsAnchor";
 import PostLayout from "../PostLayout";
 
 const HigherOrderComponents = async () => {
