@@ -20,7 +20,13 @@ const navLinks = [
 
   {
     to: "https://ai-poker.vercel.app",
-    text: "AI-Poker",
+    text: "AI-Poker-Desktop",
+    external: true,
+  },
+
+  {
+    to: "https://github.com/Baiastan",
+    text: "Github",
     external: true,
   },
 
