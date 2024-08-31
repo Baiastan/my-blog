@@ -58,6 +58,7 @@ export const usePostReadableStream = (endPoint, data, setData) => {
   const handleClick = async () => {
     if (!data || data.trim().length === 0) {
       setError("Input cannot be empty");
+      setValue("");
       return;
     }
     setValue("");
