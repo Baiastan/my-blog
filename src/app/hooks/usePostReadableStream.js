@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { useMutation } from "react-query";
 
-export const usePostReadableStream = (endPoint, data) => {
+export const usePostReadableStream = (endPoint, data, setData) => {
   const [error, setError] = useState(null);
   const [value, setValue] = useState("");
   const [apiUrl, setApiUrl] = useState("");
@@ -45,6 +45,7 @@ export const usePostReadableStream = (endPoint, data) => {
         }
 
         setTimeout(() => {
+          setData("");
           setIsDisabled(false);
         }, 10000);
       },
@@ -64,5 +65,5 @@ export const usePostReadableStream = (endPoint, data) => {
     mutation.mutate(data);
   };
 
-  return { stream: value, error, handleClick, disableAfterFirstResponse: isDisabled };
+  return { stream: value, error, handleClick, disableAfterFirstResponse: isDisabled, isLoading: mutation.isLoading };
 };
