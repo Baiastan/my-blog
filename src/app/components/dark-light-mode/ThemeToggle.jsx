@@ -21,7 +21,7 @@ const ThemeToggle = () => {
   return (
     <div className={styles.toggleContainer}>
       <input onChange={toggleTheme} type="checkbox" className={styles.checkbox} id="checkbox" />
-      <label for="checkbox" className={styles.checkboxLabel}>
+      <label htmlFor="checkbox" className={styles.checkboxLabel}>
         <HiMoon className={styles.hiMoon} />
         <HiSun className={styles.hiSun} />
         <span className={styles.ball}></span>

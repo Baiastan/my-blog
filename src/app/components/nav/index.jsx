@@ -17,13 +17,16 @@ const navLinks = [
     to: "/frontend-blog/posts",
     text: "Frontend blog",
   },
+  {
+    to: "/for-recruiters",
+    text: "For Recruiters",
+  },
 
   {
     to: "https://ai-poker.vercel.app",
     text: "AI-Poker-Desktop",
     external: true,
   },
-
   {
     to: "https://github.com/Baiastan",
     text: "Github",

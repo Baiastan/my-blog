@@ -6,6 +6,11 @@
     right: 10px;
     top: 10px;
   }
+
+  @media (max-width: 450px) {
+    right: 10px;
+    top: 5px;
+  }
 }
 
 .checkbox {

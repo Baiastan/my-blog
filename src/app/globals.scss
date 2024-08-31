@@ -29,6 +29,13 @@ button {
   cursor: pointer; /* Pointer cursor on hover */
 }
 
+button:disabled {
+  color: var(--button-disabled-text-color, #999); /* Gray or light text color */
+  background-color: var(--button-disabled-bg-color, #ccc); /* Light gray background */
+  cursor: not-allowed; /* Cursor to indicate not clickable */
+  opacity: 0.6; /* Slight transparency to indicate it's inactive */
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -107,4 +114,31 @@ p a:focus {
   @media (min-width: 620px) {
     width: 80%; // ss:w-4/5 (4/5 = 80%)
   }
+}
+
+/* Global scrollbar styles for Webkit browsers (Chrome, Safari, Edge) */
+* {
+  scrollbar-width: thin; /* For Firefox: Makes the scrollbar thinner */
+  scrollbar-color: #555 var(--bg-toggle-color); /* For Firefox: Thumb color and track color */
+}
+
+/* Apply styles to all scrollbars in Webkit browsers */
+*::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  border-radius: 10px;
+  margin-right: 3px;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--bg-toggle-color); /* Background of the scrollbar track */
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #555; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the thumb */
+  border: 2px solid var(--bg-toggle-color); /* Space around the thumb */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #777; /* Hover color for the scrollbar thumb */
 }

@@ -9,6 +9,8 @@
   --button-bg-color: #0165d2;
   --button-text-color: #fff;
 
+  --bg-toggle-color: #2e2e2e;
+
   --black-white-color: #fff;
   --hover-toggle-color: #b6bfd0;
 
@@ -21,6 +23,7 @@
 [data-theme="light"] {
   //colors
   --background-color: #fff;
+  --bg-toggle-color: #fff;
   --text-color: #000000;
   --border-color: #e1dddd;
   --button-bg-color: #2d2d2d;
