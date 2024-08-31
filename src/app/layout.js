@@ -1,10 +1,13 @@
 "use client";
 
 import Navbar from "./components/nav";
+import { injectSpeedInsights } from "@vercel/speed-insights";
 import "./globals.scss";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 import { useState } from "react";
+
+injectSpeedInsights();
 
 // export const metadata = {
 //   title: "Blog - Baiastan Zhuzupbekov",

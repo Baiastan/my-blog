@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.54",
+    "@vercel/speed-insights": "^1.0.12",
     "ai": "^3.3.20",
     "next": "^14.2.7",
     "prop-types": "^15.8.1",
