@@ -16,7 +16,8 @@ const ForRecruiters = () => {
     error,
     handleClick: handleAskAiClick,
     disableAfterFirstResponse: disabled,
-  } = usePostReadableStream(AI_RESUME_JD_ENDPOINT, jobDesc);
+    isLoading,
+  } = usePostReadableStream(AI_RESUME_JD_ENDPOINT, jobDesc, setJobDesc);
 
   return (
     <Block el="section">
@@ -39,6 +40,7 @@ const ForRecruiters = () => {
       </PostCard>
       <PostCard>
         <div style={{ whiteSpace: "pre-wrap" }} className={styles.aiResponseContainer}>
+          {isLoading ? <div>Typing...</div> : null}
           {stream}
           {error && <p>{error}</p>}
         </div>
