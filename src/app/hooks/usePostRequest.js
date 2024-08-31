@@ -41,6 +41,7 @@ export const usePostRequest = (apiUrl, data) => {
   const handleClick = () => {
     if (!data) return;
     setResponseValue(""); // Clear previous response
+    setError(null);
     mutation.mutate(data);
   };
 

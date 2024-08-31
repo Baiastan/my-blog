@@ -6,28 +6,17 @@ import PostCard from "../components/common/post-card/PostCard";
 
 import styles from "./page.module.scss";
 import { usePostReadableStream } from "../hooks/usePostReadableStream";
+import { AI_RESUME_JD_ENDPOINT } from "../data/end-points/local-server-enpoints";
 
 const ForRecruiters = () => {
   const [jobDesc, setJobDesc] = useState("");
-  const [disabled, setDisabled] = useState(true);
-  const [apiUrl, setApiUrl] = useState("");
 
-  const { stream, error, handleClick: handleAskAiClick } = usePostReadableStream(apiUrl, jobDesc);
-
-  useEffect(() => {
-    if (jobDesc.trim().length !== 0) {
-      setDisabled(false);
-    } else {
-      setDisabled(true);
-    }
-  }, [jobDesc]);
-
-  useEffect(() => {
-    const envApiUrl =
-      process.env.NODE_ENV === "development" ? process.env.NEXT_PUBLIC_DEV_API : process.env.NEXT_PUBLIC_PROD_API;
-
-    setApiUrl(envApiUrl);
-  }, []);
+  const {
+    stream,
+    error,
+    handleClick: handleAskAiClick,
+    disableAfterFirstResponse: disabled,
+  } = usePostReadableStream(AI_RESUME_JD_ENDPOINT, jobDesc);
 
   return (
     <Block el="section">
