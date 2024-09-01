@@ -1,13 +1,13 @@
 "use client";
 
 import Navbar from "./components/nav";
-import { injectSpeedInsights } from "@vercel/speed-insights";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
+
 import "./globals.scss";
 import { QueryClient, QueryClientProvider } from "react-query";
 
 import { useState } from "react";
-
-injectSpeedInsights();
 
 // export const metadata = {
 //   title: "Blog - Baiastan Zhuzupbekov",
@@ -23,6 +23,8 @@ export default function RootLayout({ children }) {
         <QueryClientProvider client={queryClient}>
           <Navbar />
           {children}
+          <SpeedInsights />
+          <Analytics />
         </QueryClientProvider>
       </body>
     </html>

@@ -6,7 +6,8 @@ import PostCard from "../components/common/post-card/PostCard";
 
 import styles from "./page.module.scss";
 import { usePostReadableStream } from "../hooks/usePostReadableStream";
-import { AI_RESUME_JD_ENDPOINT } from "../data/end-points/local-server-enpoints";
+import { AI_RESUME_JD_ENDPOINT, RESUME_JD_ANALYSIS_ENDPOINT } from "../data/end-points/local-server-enpoints";
+import { usePostRequest } from "../hooks/usePostRequest";
 
 const ForRecruiters = () => {
   const [jobDesc, setJobDesc] = useState("");
@@ -19,8 +20,19 @@ const ForRecruiters = () => {
     isLoading,
   } = usePostReadableStream(AI_RESUME_JD_ENDPOINT, jobDesc, setJobDesc);
 
+  const { response, handleClick: makeRequest } = usePostRequest(RESUME_JD_ANALYSIS_ENDPOINT, jobDesc);
+
+  const handleAIClick = async () => {
+    makeRequest();
+  };
+
+  console.log(response);
+
   return (
     <Block el="section">
+      <PostCard>
+        <button>Request my resume</button>
+      </PostCard>
       <PostCard el="div">
         <label htmlFor="job-description">
           <Header color="red">Paste your job description below:</Header>
@@ -32,11 +44,9 @@ const ForRecruiters = () => {
           value={jobDesc}
           onChange={(e) => setJobDesc(e.target.value)}
         />
-        <div>
-          <button onClick={handleAskAiClick} disabled={disabled}>
-            Ask My AI Assistant
-          </button>
-        </div>
+        <button onClick={handleAIClick} disabled={disabled}>
+          Ask My AI Assistant
+        </button>
       </PostCard>
       <PostCard>
         <div style={{ whiteSpace: "pre-wrap" }} className={styles.aiResponseContainer}>
