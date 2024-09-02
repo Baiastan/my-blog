@@ -30,9 +30,9 @@ const ForRecruiters = () => {
 
   return (
     <Block el="section">
-      <PostCard>
+      {/* <PostCard>
         <button>Request my resume</button>
-      </PostCard>
+      </PostCard> */}
       <PostCard el="div">
         <label htmlFor="job-description">
           <Header color="red">Paste your job description below:</Header>
@@ -44,7 +44,7 @@ const ForRecruiters = () => {
           value={jobDesc}
           onChange={(e) => setJobDesc(e.target.value)}
         />
-        <button onClick={handleAIClick} disabled={disabled}>
+        <button onClick={handleAskAiClick} disabled={disabled}>
           Ask My AI Assistant
         </button>
       </PostCard>
