@@ -7,7 +7,6 @@ import { fetchPostDetails } from "../../fetch-api/fetch-post-utils";
 import HTMLParser from "@/app/components/common/html-parser/HTMLParser";
 import LazyLoadOnInteraction from "./LazyLoadOnInteraction";
 import LazyIntersectionObserver from "./LazyLoadOnIntersection";
-import AllBlogsAnchor from "../../components/all-blogs-anchor/AllBlogsAnchor";
 import PostHeader from "@/app/components/common/header/PostHeader";
 import PostLayout from "../PostLayout";
 

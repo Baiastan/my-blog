@@ -10,7 +10,7 @@ const PostLinks = ({ links }) => {
   return (
     <ul className={styles.postLinks}>
       {links?.map((link) => (
-        <li key={link}>
+        <li key={link.to}>
           <Link href={link?.to}>
             <div>
               <Header level={3}>{link?.title}</Header>
