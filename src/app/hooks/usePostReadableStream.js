@@ -34,13 +34,14 @@ export const usePostReadableStream = (endPoint, data, setData) => {
     },
     {
       onSuccess: async (body) => {
-        const reader = body.pipeThrough(new TextDecoderStream()).getReader();
-
-        while (true) {
-          const { done, value } = await reader.read();
-          if (done) break;
-
-          setValue((prev) => prev + value);
+        const reader = body.getReader();
+        const decoder = new TextDecoder();
+        let done = false;
+        while (!done) {
+          const { done: doneReading, value } = await reader.read();
+          done = doneReading;
+          const chunkValue = decoder.decode(value);
+          setValue((prev) => prev + chunkValue);
         }
 
         setTimeout(() => {
