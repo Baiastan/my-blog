@@ -147,3 +147,8 @@ p a:focus {
 .match-skill {
   background-color: var(--bg-skill-matched-color);
 }
+
+.error {
+  color: red;
+  font-size: 1.5rem;
+}

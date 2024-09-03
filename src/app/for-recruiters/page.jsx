@@ -63,7 +63,7 @@ const ForRecruiters = () => {
         <div style={{ whiteSpace: "pre-wrap" }} className={styles.aiResponseContainer}>
           <Skills error={postError} isLoading={postIsLoading} data={response?.data} />
 
-          {error && <p className="error">{error}</p>}
+          {error && <p className=" ">{error}</p>}
           {isLoading ? <div className="loading">Typing...</div> : null}
           {stream}
         </div>

@@ -68,3 +68,5 @@ export const usePostReadableStream = (endPoint, data, setData) => {
 
   return { stream: value, error, handleClick, disableAfterFirstResponse: isDisabled, isLoading: mutation.isLoading };
 };
+
+//https://vercel.com/blog/gpt-3-app-next-js-vercel-edge-functions#the-frontend
