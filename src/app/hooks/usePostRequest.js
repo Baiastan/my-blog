@@ -1,22 +1,16 @@
 "use client";
 import { useEffect, useState } from "react";
 import { useMutation } from "react-query";
+import { useEndPoint } from "./useEndPoint";
 
 export const usePostRequest = (endPoint, data) => {
   const [error, setError] = useState(null);
   const [responseValue, setResponseValue] = useState("");
-  const [apiUrl, setApiUrl] = useState("");
-
-  useEffect(() => {
-    const envApiUrl =
-      process.env.NODE_ENV === "development" ? process.env.NEXT_PUBLIC_DEV_API : process.env.NEXT_PUBLIC_PROD_API;
-
-    setApiUrl(`${envApiUrl}${endPoint}`);
-  }, [endPoint]);
+  const { url } = useEndPoint(endPoint);
 
   const mutation = useMutation(
     async (data) => {
-      const response = await fetch(apiUrl, {
+      const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -31,14 +25,14 @@ export const usePostRequest = (endPoint, data) => {
       const responseData = await response.json();
 
       if (responseData.error) {
-        throw new Error(error.message);
+        throw new Error(responseData.error);
       }
 
       return responseData;
     },
     {
       onSuccess: (data) => {
-        setResponseValue(data); // Assuming the server sends back JSON data
+        setResponseValue(data);
       },
       onError: (error) => {
         setError(error.message);
@@ -47,8 +41,11 @@ export const usePostRequest = (endPoint, data) => {
   );
 
   const handleClick = () => {
-    if (!data) return;
-    setResponseValue(""); // Clear previous response
+    if (!data || data.trim().length === 0) {
+      setError("Input cannot be empty");
+      return;
+    }
+    setResponseValue("");
     setError(null);
     mutation.mutate(data);
   };

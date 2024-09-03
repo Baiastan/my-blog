@@ -1,0 +1,28 @@
+.skillsContainer {
+  margin-bottom: 16px;
+}
+
+.jobSkillsList,
+.matchedSkillsList {
+  > ul {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    > li {
+      border: 1px solid var(--border-color);
+      padding: 10px;
+      border-radius: 5px;
+      width: fit-content;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.matchedSkillsList {
+  > ul {
+    > li {
+      background-color: var(--bg-skill-matched-color);
+    }
+  }
+}

@@ -143,3 +143,7 @@ p a:focus {
 *::-webkit-scrollbar-thumb:hover {
   background-color: #777; /* Hover color for the scrollbar thumb */
 }
+
+.match-skill {
+  background-color: var(--bg-skill-matched-color);
+}

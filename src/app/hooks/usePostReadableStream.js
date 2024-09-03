@@ -1,29 +1,28 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useMutation } from "react-query";
+import { useEndPoint } from "./useEndPoint";
 
 export const usePostReadableStream = (endPoint, data, setData) => {
   const [error, setError] = useState(null);
   const [value, setValue] = useState("");
-  const [apiUrl, setApiUrl] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
 
-  useEffect(() => {
-    const envApiUrl =
-      process.env.NODE_ENV === "development" ? process.env.NEXT_PUBLIC_DEV_API : process.env.NEXT_PUBLIC_PROD_API;
-
-    setApiUrl(`${envApiUrl}${endPoint}`);
-  }, [endPoint]);
+  const { url } = useEndPoint(endPoint);
 
   const mutation = useMutation(
-    async (newMessages) => {
-      const response = await fetch(apiUrl, {
+    async ({ newMessages, params = {} }) => {
+      const response = await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ message: newMessages }),
+        body: JSON.stringify({ message: newMessages, params }),
       });
+
+      if (!response.ok && response.status === 429) {
+        throw new Error("You have exceeded the number of allowed requests to gpt. Please try again later.");
+      }
 
       if (!response.ok) {
         throw new Error("Failed to stream response");
@@ -55,7 +54,7 @@ export const usePostReadableStream = (endPoint, data, setData) => {
     }
   );
 
-  const handleClick = async () => {
+  const handleClick = async (params = {}) => {
     if (!data || data.trim().length === 0) {
       setError("Input cannot be empty");
       setValue("");
@@ -63,7 +62,7 @@ export const usePostReadableStream = (endPoint, data, setData) => {
     }
     setValue("");
     setError(null);
-    mutation.mutate(data);
+    mutation.mutate({ newMessages: data, params });
   };
 
   return { stream: value, error, handleClick, disableAfterFirstResponse: isDisabled, isLoading: mutation.isLoading };
