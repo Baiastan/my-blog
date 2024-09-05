@@ -28,8 +28,6 @@ export const usePostReadableStream = (endPoint, data, setData) => {
         throw new Error("Failed to stream response");
       }
 
-      setIsDisabled(true);
-
       return response.body;
     },
     {
@@ -61,6 +59,7 @@ export const usePostReadableStream = (endPoint, data, setData) => {
       setValue("");
       return;
     }
+    setIsDisabled(true);
     setValue("");
     setError(null);
     mutation.mutate({ newMessages: data, params });
