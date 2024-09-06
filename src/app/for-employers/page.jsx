@@ -10,7 +10,7 @@ import { AI_RESUME_JD_ENDPOINT, RESUME_JD_ANALYSIS_ENDPOINT } from "../data/end-
 import { usePostRequest } from "../hooks/usePostRequest";
 import Skills from "./components/Skills";
 
-const ForRecruiters = () => {
+const ForEmployers = () => {
   const [jobDesc, setJobDesc] = useState("");
 
   const {
@@ -72,4 +72,4 @@ const ForRecruiters = () => {
   );
 };
 
-export default ForRecruiters;
+export default ForEmployers;

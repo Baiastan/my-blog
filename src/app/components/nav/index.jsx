@@ -18,8 +18,8 @@ const navLinks = [
     text: "Frontend blog",
   },
   {
-    to: "/for-recruiters",
-    text: "For Recruiters",
+    to: "/for-employers",
+    text: "For Employers",
   },
 
   {
