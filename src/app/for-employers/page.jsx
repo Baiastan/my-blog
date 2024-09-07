@@ -9,9 +9,11 @@ import { usePostReadableStream } from "../hooks/usePostReadableStream";
 import { AI_RESUME_JD_ENDPOINT, RESUME_JD_ANALYSIS_ENDPOINT } from "../data/end-points/local-server-enpoints";
 import { usePostRequest } from "../hooks/usePostRequest";
 import Skills from "./components/Skills";
+import UploadResume from "./components/UploadResume";
 
 const ForEmployers = () => {
   const [jobDesc, setJobDesc] = useState("");
+  const [showResume, setShowResume] = useState(false);
 
   const {
     stream,
@@ -20,6 +22,12 @@ const ForEmployers = () => {
     disableAfterFirstResponse: disabled,
     isLoading,
   } = usePostReadableStream(AI_RESUME_JD_ENDPOINT, jobDesc, setJobDesc);
+
+  useEffect(() => {
+    if (disabled) {
+      setShowResume(disabled);
+    }
+  }, [disabled]);
 
   const {
     response,
@@ -55,9 +63,12 @@ const ForEmployers = () => {
           value={jobDesc}
           onChange={(e) => setJobDesc(e.target.value)}
         />
-        <button onClick={handleAIClick} disabled={disabled}>
-          Ask My AI Assistant
-        </button>
+        <div className={styles.buttonsContainer}>
+          <button onClick={handleAIClick} disabled={disabled}>
+            Ask My AI Assistant
+          </button>
+          {!showResume && <UploadResume />}
+        </div>
       </PostCard>
       <PostCard>
         <div style={{ whiteSpace: "pre-wrap" }} className={styles.aiResponseContainer}>

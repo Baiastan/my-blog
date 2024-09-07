@@ -1,26 +1,27 @@
 "use client";
 import { useState } from "react";
-import { useMutation } from "react-query";
+import { useQuery } from "react-query";
 import { useEndPoint } from "./useEndPoint";
 
-export const usePostRequest = (endPoint, data) => {
+export const useGetRequest = (endPoint) => {
   const [error, setError] = useState(null);
   const [responseValue, setResponseValue] = useState("");
   const { url } = useEndPoint(endPoint);
 
-  console.log(url);
-
-  const mutation = useMutation(
-    async (data) => {
+  const {
+    isLoading,
+    data,
+    error: queryError,
+    refetch,
+  } = useQuery(
+    ["getRequest", url],
+    async () => {
       const response = await fetch(url, {
-        method: "POST",
+        method: "GET",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(data),
       });
-
-      console.log(response);
 
       if (!response.ok) {
         throw new Error("Failed to fetch response");
@@ -35,6 +36,7 @@ export const usePostRequest = (endPoint, data) => {
       return responseData;
     },
     {
+      enabled: false, // Disable automatic fetching, can call refetch manually
       onSuccess: (data) => {
         setResponseValue(data);
       },
@@ -44,23 +46,16 @@ export const usePostRequest = (endPoint, data) => {
     }
   );
 
-  const handleClick = (isUserInput = true) => {
-    if (isUserInput) {
-      if (!data || data?.trim().length === 0) {
-        setError("Input cannot be empty");
-        return;
-      }
-    }
-
+  const handleClick = () => {
     setResponseValue("");
     setError(null);
-    mutation.mutate(data);
+    refetch(); // Trigger the GET request manually
   };
 
   return {
-    response: responseValue,
-    isLoading: mutation.isLoading,
-    error,
+    response: responseValue || data,
+    isLoading,
+    error: error || queryError?.message,
     handleClick,
   };
 };

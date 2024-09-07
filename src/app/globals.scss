@@ -26,12 +26,13 @@ button {
   font-size: 16px; /* Font size */
   border: none; /* No border */
   width: fit-content;
+  border-radius: var(--border-radius);
   background-color: var(--button-bg-color);
   cursor: pointer; /* Pointer cursor on hover */
 }
 
 button:disabled {
-  color: var(--button-disabled-text-color, #999); /* Gray or light text color */
+  color: var(--button-disabled-text-color, #020202); /* Gray or light text color */
   background-color: var(--button-disabled-bg-color, #ccc); /* Light gray background */
   cursor: not-allowed; /* Cursor to indicate not clickable */
   opacity: 0.6; /* Slight transparency to indicate it's inactive */
