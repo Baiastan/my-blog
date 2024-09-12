@@ -65,7 +65,7 @@ const ForEmployers = () => {
         />
         <div className={styles.buttonsContainer}>
           <button onClick={handleAIClick} disabled={disabled}>
-            Ask My AI Assistant
+            Analyze Job Description
           </button>
           {!showResume && <UploadResume />}
         </div>
